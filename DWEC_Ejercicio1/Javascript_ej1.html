@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let datos = prompt("Introduce tu nombre, apellidos y año de nacimiento");
+
+
+        let datosArray = datos.split("");
+        let nombre = datosArray[0].substring(0, 1) +
+            datosArray[1] +
+            datosArray[2].substring(0, 1) +
+            datosArray[3].substring(2, 4);
+        nombre = nombre.toLowerCase();
+
+        document.write("Los datos en mayuscula: " + datos.toUpperCase() + "<br>");
+        document.write("Muestra nombre, apellidos y edad en línea: <br> ");
+        datosArray.forEach(element => {
+            document.write(element + "<br>");
+        });
+        document.write("El nombre del usuario ese: " + nombre);
+        document.write("<br>")
+        document.write("total de caracteres escritos: " + datos.length + " caracteres");
+        document.write("<br>")
+        function contarVocales(datos){
+            const contar = datos.match(/[aeiou]/gi).length;
+            return contar;
+        }
+        const result = contarVocales(datos);
+        document.write("El total de vocales son: " + result + " vocales");
+
+    </script>
+</body>
+
+</html>
