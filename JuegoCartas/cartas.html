@@ -22,11 +22,11 @@
             grid-gap: 10px;
             justify-content: center;
 
-
+            margin-top: 100px;
         }
 
         .cartas {
-            border: black 1px solid;
+
             background-image: url("dorso.jpg");
             background-size: contain;
             background-repeat: no-repeat;
@@ -36,15 +36,30 @@
 
             font-family: 'Bebas Neue', cursive;
             text-align: center;
-        }
-        
-        .imagenLogo{
-            width: 100px;
-            height: 100px;
-        }
-        .header{
+           
             display: flex;
             justify-content: space-around;
+        }
+
+        .imagenLogo {
+            width: 75px;
+            height: 75 px;
+
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .titulo {
+            margin-right: 450px;
+        }
+
+        table,
+        th,
+        td {
+            border: solid black 2px;
         }
     </style>
 </head>
@@ -57,15 +72,66 @@
         <div class="titulo">
             <h1>Juego de cartas </h1>
         </div>
-        
+
     </div>
-<hr>
+    <hr>
 
     <div class="puntuacion">
-        <h4>Puntuación</h4>
-        <i class="fas fa-star-half-alt"></i><input type="text" value="0" id="marcador" disabled>
-        <h4>Errores</h4> <i class="fas fa-bomb"></i>
-        <input type="text" value="0" id="fallos" disabled>
+        <div>
+            <table>
+                <tr>
+                    <th width="75px" rowspan="2">
+                        Nombre:
+                    </th>
+                    <th>
+                        Puntuación
+                    </th>
+                    <th>
+                        Errores
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <i class="fas fa-star-half-alt"></i><input type="text" value="0" id="marcador" disabled>
+                    </th>
+                    <th>
+                        <i class="fas fa-bomb"></i> <input type="text" value="0" id="fallos" disabled>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        Top player:
+                    </th>
+                    <th>
+                        Errores:
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        0
+                    </th>
+                    <th>
+                        0
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th colspan="2">Lenguaje</th>
+                
+                </tr>
+                <tr>
+                    <td>EN</td>
+                    <td>ES</td>
+                </tr>
+            </table>
+        </div>
     </div>
     <br>
     <div class="contenedor">
