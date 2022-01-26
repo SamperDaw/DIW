@@ -181,7 +181,7 @@
     </div>
 
     <div class="informacion">
-        <p>info</p>
+        <p id="informacion">informacion</p>
     </div>
     <div class="jefe">
 
@@ -218,9 +218,10 @@
         let nombreUsuario = document.getElementById('usuario');
         var usuario = prompt("Escribe tu nick: ");
         nombreUsuario.innerHTML = usuario;
+    
 
-
-
+        
+        
         window.addEventListener('load', function () {
             arrSrc.sort(function () { return Math.random() - 0.5 });
         });
@@ -254,10 +255,16 @@
 
         let sel1 = '';
         let sel2 = '';
-        let puntuacion = 0;
-        let errores = 0;
 
+        let errores = document.getElementById("fallos");
+        let puntuacion = document.getElementById("marcador");
+        puntuacion = 0;
+        errores = 0;
+        let ganadorSto = document.getElementById('godplayer');
 
+        let errorSto = document.getElementById('godmistakes');
+        
+        
 
 
         arrCartas[0].addEventListener('click', function () {
@@ -319,7 +326,8 @@
                     } else {
                         sel2 = e.target;
                         if (sel1.style.backgroundImage === sel2.style.backgroundImage) {
-
+                            let info = document.getElementById("informacion");
+                            info.innerHTML = "Son pareja";
                             sel1.removeEventListener('click', comparar);
                             sel2.removeEventListener('click', comparar);
 
@@ -331,11 +339,9 @@
                             marcador.value = puntuacion;
                             if (marcador.value == 6) {
 
-
-                                localStorage.getItem("top",usuario);      
-                                localStorage.getItem("top",fallos);
-
-                                alert("Has ganado máquina");
+                                
+                                
+                                alert("Has ganado máquina con un total de: "+errores);
                                 location.reload();
                             }
                         } else {
@@ -349,10 +355,11 @@
                                     sel1.style.backgroundImage = 'url(dorso.jpg)';
                                     sel2.style.backgroundImage = 'url(dorso.jpg)';
                                 }
-
+                               
                                 sel1 = '';
                                 sel2 = '';
-
+                                let info = document.getElementById("informacion");
+                                info.innerHTML = "no son pareja";   
                                 errores++;
                                 fallos.value = errores;
                             }, 500);
@@ -413,6 +420,15 @@
               idiomaESP();
           }
 
+          function compararRanking(){
+                let storeGana = localStorage.getItem("top");
+                if(storeGana < errores){
+                    localStorage.setItem("top",usuario);
+
+                }else{
+                    return null;
+                }
+          }
 
     </script>
     </div>
