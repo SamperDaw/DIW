@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Este juegazo de cartas fantastico exprimiera tu memoria al maximo durante horas, bastante de locos"/>
+        content="Este juegazo de cartas fantastico exprimiera tu memoria al maximo durante horas, bastante de locos" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -82,9 +82,10 @@
             overflow-x: hidden;
 
         }
-        .descripcion>p::selection{
-            color:red;
-            
+
+        .descripcion>p::selection {
+            color: red;
+
 
         }
 
@@ -108,13 +109,12 @@
 
         }
 
-        .footer{
+        .footer {
             border: solid black 1px;
             border-radius: 20px;
             text-align: center;
-            width: 100% ;
-           margin-top: 50px
-           ;
+            width: 100%;
+            margin-top: 50px;
             padding: 5px;
         }
     </style>
@@ -201,7 +201,28 @@
             <div class="cartas" id="carta12"></div>
         </div>
         <div class="descripcion">
-            <p>Este juegazo de maquinas es solo para maquinas y apto para putisimos maquinas Lorem ipsum dolor sit amet consectetur, adipisicing elit.  lorem lorem lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis asperiores temporibus id, ratione quia nostrum vel totam laudantium aliquid corporis. Laborum voluptatem, quae rem nihil nobis earum eaque tenetur vitae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, tenetur et unde, cupiditate aut aperiam ab suscipit quod officia earum amet, illum facere! Modi ex sit laboriosam est corrupti illo. Nulla enim deleniti, necessitatibus omnis natus veniam nihil ipsa ratione ipsam similique! Porro reiciendis tempore natus quos, itaque cupiditate labore nihil voluptate! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim delectus iste, architecto distinctio cupiditate cumque voluptatem excepturi dolorum explicabo, laboriosam iusto tempore ducimus aliquam in quae ipsa dolor et earum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia ab repellendus rerum magni molestiae earum perferendis minus maiores eligendi et at corrupti adipisci itaque, quis cum necessitatibus sunt optio consectetur. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat sequi velit necessitatibus ab officia dignissimos porro corrupti omnis magnam, voluptas voluptates officiis doloribus minus magni. Suscipit dicta tenetur assumenda nesciunt Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quod dolor odit non, reprehenderit ratione repudiandae, beatae voluptas laborum amet optio officia atque dolores nihil repellendus eum? Illo, ad tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas accusantium quia, magnam asperiores, rerum expedita saepe nesciunt delectus dolor nostrum, perferendis nihil. Cumque illum sequi excepturi? Atque, aliquam illum!loremlorem    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dignissimos doloremque provident ullam repellat ut aliquid quis perferendis, assumenda fuga laudantium quidem est accusantium corporis similique optio eos numquam</p>
+            <p>Este juegazo de maquinas es solo para maquinas y apto para putisimos maquinas Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. lorem lorem lorem Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Reiciendis asperiores temporibus id, ratione quia nostrum vel totam laudantium aliquid corporis.
+                Laborum voluptatem, quae rem nihil nobis earum eaque tenetur vitae. Lorem ipsum, dolor sit amet
+                consectetur adipisicing elit. Dignissimos, tenetur et unde, cupiditate aut aperiam ab suscipit quod
+                officia earum amet, illum facere! Modi ex sit laboriosam est corrupti illo. Nulla enim deleniti,
+                necessitatibus omnis natus veniam nihil ipsa ratione ipsam similique! Porro reiciendis tempore natus
+                quos, itaque cupiditate labore nihil voluptate! Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Enim delectus iste, architecto distinctio cupiditate cumque voluptatem excepturi dolorum
+                explicabo, laboriosam iusto tempore ducimus aliquam in quae ipsa dolor et earum. Lorem ipsum dolor sit,
+                amet consectetur adipisicing elit. Officia ab repellendus rerum magni molestiae earum perferendis minus
+                maiores eligendi et at corrupti adipisci itaque, quis cum necessitatibus sunt optio consectetur. Lorem
+                ipsum dolor, sit amet consectetur adipisicing elit. Quaerat sequi velit necessitatibus ab officia
+                dignissimos porro corrupti omnis magnam, voluptas voluptates officiis doloribus minus magni. Suscipit
+                dicta tenetur assumenda nesciunt Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quod
+                dolor odit non, reprehenderit ratione repudiandae, beatae voluptas laborum amet optio officia atque
+                dolores nihil repellendus eum? Illo, ad tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Omnis voluptas accusantium quia, magnam asperiores, rerum expedita saepe nesciunt delectus dolor
+                nostrum, perferendis nihil. Cumque illum sequi excepturi? Atque, aliquam illum!loremlorem Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Necessitatibus dignissimos doloremque provident ullam
+                repellat ut aliquid quis perferendis, assumenda fuga laudantium quidem est accusantium corporis
+                similique optio eos numquam</p>
         </div>
     </div>
 
@@ -212,18 +233,21 @@
 
 
     <script>
-    
+
 
 
         let nombreUsuario = document.getElementById('usuario');
         var usuario = prompt("Escribe tu nick: ");
         nombreUsuario.innerHTML = usuario;
-    
 
-        
-        
+
+
+
         window.addEventListener('load', function () {
             arrSrc.sort(function () { return Math.random() - 0.5 });
+            document.getElementById("godplayer").innerHTML=localStorage.getItem("topUsuario");
+            document.getElementById("godmistakes").innerHTML=localStorage.getItem("topErrores");
+
         });
 
 
@@ -256,12 +280,13 @@
         let sel1 = '';
         let sel2 = '';
 
+         
         let errores = document.getElementById("fallos");
         let puntuacion = document.getElementById("marcador");
         puntuacion = 0;
         errores = 0;
-       
-        
+
+
 
 
         arrCartas[0].addEventListener('click', function () {
@@ -335,10 +360,20 @@
                             puntuacion++;
                             marcador.value = puntuacion;
                             if (marcador.value == 6) {
+                                
+                                
+                                if (localStorage.getItem("topErrores") > errores){
+                                    localStorage.setItem("topUsuario", usuario);
+                                    localStorage.setItem("topErrores", errores);
 
-                                
-                                
-                                alert("Has ganado máquina con un total de: "+errores);
+                                    document.getElementById("godplayer").innerHTML=usuario;
+                                    document.getElementById("godmistakes").innerHTML=errores;
+                                }else{
+                                   
+                                }
+
+
+                                alert("Has ganado máquina con un total de: " + errores);
                                 location.reload();
                             }
                         } else {
@@ -352,11 +387,11 @@
                                     sel1.style.backgroundImage = 'url(dorso.jpg)';
                                     sel2.style.backgroundImage = 'url(dorso.jpg)';
                                 }
-                               
+
                                 sel1 = '';
                                 sel2 = '';
                                 let info = document.getElementById("informacion");
-                                info.innerHTML = "no son pareja";   
+                                info.innerHTML = "no son pareja";
                                 errores++;
                                 fallos.value = errores;
                             }, 500);
@@ -369,10 +404,12 @@
             })
         });
 
+
+
         let btnEsp = document.getElementById("btnESP");
         let btnEng = document.getElementById("btnENG");
 
-    
+
         let paginaESP = document.getElementsByClassName("esp");
         let paginaENG = document.getElementsByClassName("eng");
 
@@ -388,44 +425,38 @@
 
 
 
-        function idiomaESP() {                 
-                for (i = 0; i < paginaENG.length; i++) {
-                    paginaENG[i].classList.add('ocultar');
-                }
-                for (i = 0; i < paginaESP.length; i++) {
-                    paginaESP[i].classList.remove('ocultar');
-                }
-                localStorage.setItem("idioma","español");
+        function idiomaESP() {
+            for (i = 0; i < paginaENG.length; i++) {
+                paginaENG[i].classList.add('ocultar');
             }
+            for (i = 0; i < paginaESP.length; i++) {
+                paginaESP[i].classList.remove('ocultar');
+            }
+            localStorage.setItem("idioma", "español");
+        }
 
-        
+
         function idiomaENG() {
-                for (i = 0; i < paginaESP.length; i++) {
-                    paginaENG[i].classList.remove('ocultar');
-                }
-                for (i = 0; i < paginaENG.length; i++) {
-                    paginaESP[i].classList.add('ocultar');
-                }
-                localStorage.setItem("idioma","ingles");
+            for (i = 0; i < paginaESP.length; i++) {
+                paginaENG[i].classList.remove('ocultar');
             }
-            
+            for (i = 0; i < paginaENG.length; i++) {
+                paginaESP[i].classList.add('ocultar');
+            }
+            localStorage.setItem("idioma", "ingles");
+        }
 
-          if(localStorage.getItem("idioma")=="ingles"){
-              idiomaENG();
-          }
-          if(localStorage.getItem("idioma")=="español"){
-              idiomaESP();
-          }
 
-          function compararRanking(){
-                let storeGana = localStorage.getItem("top");
-                if(storeGana < errores){
-                    localStorage.setItem("top",usuario);
+        if (localStorage.getItem("idioma") == "ingles") {
+            idiomaENG();
+        }
+        if (localStorage.getItem("idioma") == "español") {
+            idiomaESP();
+        }
 
-                }else{
-                    return null;
-                }
-          }
+
+
+
 
     </script>
     </div>
