@@ -31,7 +31,7 @@
 
         .cartas {
 
-            background-image: url("dorso.jpg");
+            background-image: url("cartas/dorso.jpg");
             background-size: contain;
             background-repeat: no-repeat;
         }
@@ -270,10 +270,10 @@
         ];
 
         let arrSrc = [
-            "url(mtg1.jpg)", "url(mtg2.jpg)", "url(mtg3.jpg)",
-            "url(mtg4.jpg)", "url(mtg5.jpg)", "url(mtg6.jpg)",
-            "url(mtg1.jpg)", "url(mtg2.jpg)", "url(mtg3.jpg)",
-            "url(mtg4.jpg)", "url(mtg5.jpg)", "url(mtg6.jpg)"
+            "url(cartas/mtg1.jpg)", "url(cartas/mtg2.jpg)", "url(cartas/mtg3.jpg)",
+            "url(cartas/mtg4.jpg)", "url(cartas/mtg5.jpg)", "url(cartas/mtg6.jpg)",
+            "url(cartas/mtg1.jpg)", "url(cartas/mtg2.jpg)", "url(cartas/mtg3.jpg)",
+            "url(cartas/mtg4.jpg)", "url(cartas/mtg5.jpg)", "url(cartas/mtg6.jpg)"
         ];
         let marcador = document.getElementById('marcador');
 
@@ -380,12 +380,12 @@
 
                             setTimeout(() => {
                                 if (sel1.style.visibility == 'inherit') {
-                                    sel2.style.backgroundImage = 'url(dorso.jpg)';
+                                    sel2.style.backgroundImage = 'url(cartas/dorso.jpg)';
                                 } else if (sel2.style.visibility == 'inherit') {
-                                    sel1.style.backgroundImage = 'url(dorso.jpg)';
+                                    sel1.style.backgroundImage = 'url(cartas/dorso.jpg)';
                                 } else {
-                                    sel1.style.backgroundImage = 'url(dorso.jpg)';
-                                    sel2.style.backgroundImage = 'url(dorso.jpg)';
+                                    sel1.style.backgroundImage = 'url(cartas/dorso.jpg)';
+                                    sel2.style.backgroundImage = 'url(cartas/dorso.jpg)';
                                 }
 
                                 sel1 = '';
