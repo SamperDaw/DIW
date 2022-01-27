@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LANGUAGE>
     <EN>
+        <TITLE>CARD GAME</TITLE>
         <SCORE>Score:</SCORE>
         <ERRORS>Errors:</ERRORS>
         <RANKING>Top Player:</RANKING>
@@ -9,11 +10,12 @@
         <VICTORY></VICTORY>
     </EN>
     <ES>
+        <TITULO>JUEGO DE CARTAS</TITULO>
         <SCORE>Puntos:</SCORE>
         <ERRORS>Errores:</ERRORS>
         <RANKING>Mejor jugador:</RANKING>
         <POINT>Son pareja:</POINT>
-        <MISS>Has fallado, intentalo de nuevo</MISS>
-        <VICTORY>Has ganado maquina</VICTORY>
+        <MISS>Has fallado, intentalo de nuevo:</MISS>
+        <VICTORY>Has ganado maquina:</VICTORY>
     </ES>
 </LANGUAGE>

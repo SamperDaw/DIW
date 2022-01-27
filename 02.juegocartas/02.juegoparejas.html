@@ -38,10 +38,10 @@
                     <th width="75px" rowspan="2">
                         <p id="usuario"></p>
                     </th>
-                    <th class="esp">Puntuación</th>
-                    <th class="eng">Score</th>
-                    <th class="esp">Fallos</th>
-                    <th class="eng">Errors</th>
+                    <th class="cargaIdioma">Puntuación</th>
+
+                    <th class="cargaIdioma">Fallos</th>
+
                 </tr>
                 <tr>
                     <th> <i class="fas fa-star-half-alt"></i><input type="text" value="0" id="marcador" disabled
@@ -53,10 +53,10 @@
         <div class="ranking">
             <table>
                 <tr>
-                    <th class="esp"> Mejor jugador:</th>
-                    <th class="eng"> Top player:</th>
-                    <th class="esp"> Errores mejor jugador:</th>
-                    <th class="eng">Top player errors:</th>
+                    <th class="cargaIdioma"> Mejor jugador:</th>
+
+                    <th class="cargaIdioma"> Errores mejor jugador:</th>
+
                 </tr>
                 <tr>
                     <th id="godplayer"></th>
@@ -67,8 +67,8 @@
         <div class="idioma">
             <table>
                 <tr>
-                    <th class="esp" colspan="2">Idioma</th>
-                    <th class="eng" colspan="2">Language</th>
+                    <th class="cargaIdioma" colspan="2">Idioma</th>
+
                 </tr>
                 <tr>
                     <td><button id="btnESP">ES</button></td>
@@ -79,7 +79,7 @@
     </div>
 
     <div class="informacion">
-        <p id="informacion">informacion</p>
+        <p id="cargaIdioma">informacion</p>
     </div>
     <div class="jefe">
 
@@ -98,9 +98,9 @@
             <div class="cartas" id="carta11"></div>
             <div class="cartas" id="carta12"></div>
         </div>
-        <div id="desc" class="descripcion" >
+        <div id="desc" class="descripcion">
             <p>Esto es un juego de carta para ejercitar la memoria</p>
-            <button id="mostrarDesc">Mostrar descripcion</button>
+
         </div>
     </div>
 
@@ -112,9 +112,10 @@
 
     <script>
 
-        document.getElementById("mostrarDesc").addEventListener("click", mostrarDesc);
-
-        function mostrarDesc() {
+        //Cambio de idioma en la descripcion
+        document.getElementById("btnESP").addEventListener("click", mostrarDescES);
+        document.getElementById("btnENG").addEventListener("click", mostrarDescENG);
+        function mostrarDescES() {
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -125,14 +126,24 @@
             xhr.send();
         }
 
+        function mostrarDescENG() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("desc").innerHTML = this.responseText;
+                }
+            };
+            xhr.open("GET", "descripen.txt", true);
+            xhr.send();
+        }
 
         let nombreUsuario = document.getElementById('usuario');
         var usuario = prompt("Escribe tu nick: ");
         nombreUsuario.innerHTML = usuario;
+        //cambio de idioma xml
+        document.getElementById("cargaCatalogo").addEventListener("click", cargarCatalogo);
 
-
-
-
+     
         window.addEventListener('load', function () {
             arrSrc.sort(function () { return Math.random() - 0.5 });
             document.getElementById("godplayer").innerHTML = localStorage.getItem("topUsuario");
@@ -296,53 +307,10 @@
 
 
 
-        let btnEsp = document.getElementById("btnESP");
-        let btnEng = document.getElementById("btnENG");
-
-
-        let paginaESP = document.getElementsByClassName("esp");
-        let paginaENG = document.getElementsByClassName("eng");
-
-
-        for (i = 0; i < paginaENG.length; i++) {
-            paginaENG[i].classList.add('ocultar');
-        }
-
-        btnEsp.addEventListener('click', idiomaESP);
-        btnEng.addEventListener('click', idiomaENG);
 
 
 
 
-
-        function idiomaESP() {
-            for (i = 0; i < paginaENG.length; i++) {
-                paginaENG[i].classList.add('ocultar');
-            }
-            for (i = 0; i < paginaESP.length; i++) {
-                paginaESP[i].classList.remove('ocultar');
-            }
-            localStorage.setItem("idioma", "español");
-        }
-
-
-        function idiomaENG() {
-            for (i = 0; i < paginaESP.length; i++) {
-                paginaENG[i].classList.remove('ocultar');
-            }
-            for (i = 0; i < paginaENG.length; i++) {
-                paginaESP[i].classList.add('ocultar');
-            }
-            localStorage.setItem("idioma", "ingles");
-        }
-
-
-        if (localStorage.getItem("idioma") == "ingles") {
-            idiomaENG();
-        }
-        if (localStorage.getItem("idioma") == "español") {
-            idiomaESP();
-        }
 
 
 
