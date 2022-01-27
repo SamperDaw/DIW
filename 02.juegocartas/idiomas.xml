@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LANGUAGE>
+    <EN>
+        <SCORE>Score:</SCORE>
+        <ERRORS>Errors:</ERRORS>
+        <RANKING>Top Player:</RANKING>
+        <POINT></POINT>
+        <MISS></MISS>
+        <VICTORY></VICTORY>
+    </EN>
+    <ES>
+        <SCORE>Puntos:</SCORE>
+        <ERRORS>Errores:</ERRORS>
+        <RANKING>Mejor jugador:</RANKING>
+        <POINT>Son pareja:</POINT>
+        <MISS>Has fallado, intentalo de nuevo</MISS>
+        <VICTORY>Has ganado maquina</VICTORY>
+    </ES>
+</LANGUAGE>

@@ -1,0 +1,99 @@
+.contenedor {
+    display: grid;
+    grid-template-columns: 144px 144px 144px 144px;
+    grid-template-rows: 200px 200px 200px;
+    grid-gap: 10px;
+    justify-content: center;
+    width: 70%;
+    margin-top: 10px;
+    margin-left: 400px;
+}
+
+.cartas {
+
+    background-image: url("cartas/dorso.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.puntuacion {
+
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.imagenLogo {
+    width: 75px;
+    height: 75 px;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.titulo {
+    margin-right: 450px;
+}
+
+table,
+th,
+td {
+    border: solid black 2px;
+}
+
+.ocultar {
+    display: none;
+}
+
+.descripcion {
+    border: solid black 1px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    overflow: scroll;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+
+.descripcion>p::selection {
+    color: red;
+
+
+}
+
+.jefe {
+
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    height: 620px;
+
+}
+
+.informacion {
+    border: solid black 1px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    height: 40%;
+    margin-top: 10px;
+
+
+}
+
+.footer {
+    border: solid black 1px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    padding: 5px;
+}

@@ -11,119 +11,17 @@
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="favi.png" type="image/png" />
+    <link rel="stylesheet" href="css.css">
     <title>Juego de Cartas</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Bebas+Neue&display=swap');
-
-
-
-
-        .contenedor {
-            display: grid;
-            grid-template-columns: 144px 144px 144px 144px;
-            grid-template-rows: 200px 200px 200px;
-            grid-gap: 10px;
-            justify-content: center;
-            width: 70%;
-            margin-top: 10px;
-            margin-left: 400px;
-        }
-
-        .cartas {
-
-            background-image: url("cartas/dorso.jpg");
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
-        .puntuacion {
-
-            font-family: 'Bebas Neue', cursive;
-            text-align: center;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .imagenLogo {
-            width: 75px;
-            height: 75 px;
-
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .titulo {
-            margin-right: 450px;
-        }
-
-        table,
-        th,
-        td {
-            border: solid black 2px;
-        }
-
-        .ocultar {
-            display: none;
-        }
-
-        .descripcion {
-            border: solid black 1px;
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 30%;
-            overflow: scroll;
-            height: 100%;
-            overflow-x: hidden;
-
-        }
-
-        .descripcion>p::selection {
-            color: red;
-
-
-        }
-
-        .jefe {
-
-            display: flex;
-            justify-content: flex-start;
-            margin-bottom: 10px;
-            height: 620px;
-
-        }
-
-        .informacion {
-            border: solid black 1px;
-            border-radius: 20px;
-            text-align: center;
-            width: 100%;
-            height: 40%;
-            margin-top: 10px;
-
-
-        }
-
-        .footer {
-            border: solid black 1px;
-            border-radius: 20px;
-            text-align: center;
-            width: 100%;
-            margin-top: 50px;
-            padding: 5px;
-        }
     </style>
 </head>
 
 <body>
     <div class="header">
         <div class="logo">
-            <img class="imagenLogo" src="logo.png">
+            <img class="imagenLogo" src="cartas/logo.png">
         </div>
         <div class="titulo">
             <h1 class="esp">Juego de cartas </h1>
@@ -200,29 +98,9 @@
             <div class="cartas" id="carta11"></div>
             <div class="cartas" id="carta12"></div>
         </div>
-        <div class="descripcion">
-            <p>Este juegazo de maquinas es solo para maquinas y apto para putisimos maquinas Lorem ipsum dolor sit amet
-                consectetur, adipisicing elit. lorem lorem lorem Lorem, ipsum dolor sit amet consectetur adipisicing
-                elit. Reiciendis asperiores temporibus id, ratione quia nostrum vel totam laudantium aliquid corporis.
-                Laborum voluptatem, quae rem nihil nobis earum eaque tenetur vitae. Lorem ipsum, dolor sit amet
-                consectetur adipisicing elit. Dignissimos, tenetur et unde, cupiditate aut aperiam ab suscipit quod
-                officia earum amet, illum facere! Modi ex sit laboriosam est corrupti illo. Nulla enim deleniti,
-                necessitatibus omnis natus veniam nihil ipsa ratione ipsam similique! Porro reiciendis tempore natus
-                quos, itaque cupiditate labore nihil voluptate! Lorem ipsum, dolor sit amet consectetur adipisicing
-                elit. Enim delectus iste, architecto distinctio cupiditate cumque voluptatem excepturi dolorum
-                explicabo, laboriosam iusto tempore ducimus aliquam in quae ipsa dolor et earum. Lorem ipsum dolor sit,
-                amet consectetur adipisicing elit. Officia ab repellendus rerum magni molestiae earum perferendis minus
-                maiores eligendi et at corrupti adipisci itaque, quis cum necessitatibus sunt optio consectetur. Lorem
-                ipsum dolor, sit amet consectetur adipisicing elit. Quaerat sequi velit necessitatibus ab officia
-                dignissimos porro corrupti omnis magnam, voluptas voluptates officiis doloribus minus magni. Suscipit
-                dicta tenetur assumenda nesciunt Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quod
-                dolor odit non, reprehenderit ratione repudiandae, beatae voluptas laborum amet optio officia atque
-                dolores nihil repellendus eum? Illo, ad tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Omnis voluptas accusantium quia, magnam asperiores, rerum expedita saepe nesciunt delectus dolor
-                nostrum, perferendis nihil. Cumque illum sequi excepturi? Atque, aliquam illum!loremlorem Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Necessitatibus dignissimos doloremque provident ullam
-                repellat ut aliquid quis perferendis, assumenda fuga laudantium quidem est accusantium corporis
-                similique optio eos numquam</p>
+        <div class="descripcion" id="desc">
+            <p>Esto es un juego de carta para ejercitar la memoria</p>
+            <button id="mostrarDesc">Mostrar descripcion</button>
         </div>
     </div>
 
@@ -234,6 +112,18 @@
 
     <script>
 
+        document.getElementById("mostrarDesc").addEventListener("click", mostrarDesc);
+
+        function mostrarDesc() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("desc").innerHTML = this.responseText;
+                }
+            };
+            xhr.open("GET", "desciripcion.txt", true);
+            xhr.send();
+        }
 
 
         let nombreUsuario = document.getElementById('usuario');
@@ -245,8 +135,8 @@
 
         window.addEventListener('load', function () {
             arrSrc.sort(function () { return Math.random() - 0.5 });
-            document.getElementById("godplayer").innerHTML=localStorage.getItem("topUsuario");
-            document.getElementById("godmistakes").innerHTML=localStorage.getItem("topErrores");
+            document.getElementById("godplayer").innerHTML = localStorage.getItem("topUsuario");
+            document.getElementById("godmistakes").innerHTML = localStorage.getItem("topErrores");
 
         });
 
@@ -280,7 +170,7 @@
         let sel1 = '';
         let sel2 = '';
 
-         
+
         let errores = document.getElementById("fallos");
         let puntuacion = document.getElementById("marcador");
         puntuacion = 0;
@@ -360,16 +250,16 @@
                             puntuacion++;
                             marcador.value = puntuacion;
                             if (marcador.value == 6) {
-                                
-                                
-                                if (localStorage.getItem("topErrores") > errores){
+
+
+                                if (localStorage.getItem("topErrores") > errores) {
                                     localStorage.setItem("topUsuario", usuario);
                                     localStorage.setItem("topErrores", errores);
 
-                                    document.getElementById("godplayer").innerHTML=usuario;
-                                    document.getElementById("godmistakes").innerHTML=errores;
-                                }else{
-                                   
+                                    document.getElementById("godplayer").innerHTML = usuario;
+                                    document.getElementById("godmistakes").innerHTML = errores;
+                                } else {
+
                                 }
 
 
