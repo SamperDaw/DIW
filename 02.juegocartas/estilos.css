@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Bebas+Neue&display=swap');
+
+
+
+
 .contenedor {
     display: grid;
     grid-template-columns: 144px 144px 144px 144px;
@@ -11,7 +16,7 @@
 
 .cartas {
 
-    background-image: url("cartas/dorso.jpg");
+    background-image: url("imagenes/dorso.jpg");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -63,6 +68,8 @@ td {
 
 }
 
+
+
 .descripcion>p::selection {
     color: red;
 
@@ -96,8 +103,4 @@ td {
     width: 100%;
     margin-top: 50px;
     padding: 5px;
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(186,130,164,1) 9%, rgba(252,176,69,1) 100%);
-
-
 }
