@@ -20,9 +20,10 @@ body {
 }
 
 .cartas {
-  background-image: url("imagenes/dorso.jpg");
+  background-image: url("../imagenes/dorso.png");
   background-size: contain;
   background-repeat: no-repeat;
+  
 }
 
 .puntuacion {

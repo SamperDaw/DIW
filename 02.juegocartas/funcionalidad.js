@@ -150,12 +150,12 @@
 
                             setTimeout(() => {
                                 if (sel1.style.visibility == 'inherit') {
-                                    sel2.style.backgroundImage = 'url(imagenes/dorso.jpg)';
+                                    sel2.style.backgroundImage = 'url(imagenes/dorso.png)';
                                 } else if (sel2.style.visibility == 'inherit') {
-                                    sel1.style.backgroundImage = 'url(imagenes/dorso.jpg)';
+                                    sel1.style.backgroundImage = 'url(imagenes/dorso.png)';
                                 } else {
-                                    sel1.style.backgroundImage = 'url(imagenes/dorso.jpg)';
-                                    sel2.style.backgroundImage = 'url(imagenes/dorso.jpg)';
+                                    sel1.style.backgroundImage = 'url(imagenes/dorso.png)';
+                                    sel2.style.backgroundImage = 'url(imagenes/dorso.png)';
                                 }
 
                                 sel1 = '';
