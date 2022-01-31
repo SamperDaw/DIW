@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Bebas+Neue&display=swap");
 body {
-  background-image: url("imagenes/fondo.png");
+  background-image: url("../imagenes/fondo.png");
   background-size: cover;
 }
 
@@ -16,7 +16,8 @@ body {
   justify-content: center;
   width: 70%;
   margin-top: 10px;
-  margin-left: 400px;
+  margin-left: 100px;
+
 }
 
 .cartas {
@@ -69,6 +70,10 @@ td {
   overflow: scroll;
   height: 100%;
   overflow-x: hidden;
+  background: rgb(252,69,69);
+background: linear-gradient(90deg, rgba(252,69,69,1) 55%, rgba(214,224,138,1) 94%);
+  padding: 5px;
+  
 }
 
 .descripcion > p::-moz-selection {
@@ -102,8 +107,8 @@ td {
   width: 100%;
   margin-top: 50px;
   padding: 5px;
-  background: #fc4545;
-  background: linear-gradient(90deg, #fc4545 0%, #fc4545 0%, red 0%, #e84545 80%, rgba(131, 58, 180, 0) 99%);
+  background: rgb(252,69,69);
+  background: linear-gradient(90deg, rgba(252,69,69,1) 55%, rgba(214,224,138,1) 94%);
 }
 
 @media screen and (max-width: 1024px) {
