@@ -165,9 +165,9 @@ background: linear-gradient(90deg, rgba(252,69,69,1) 0%, rgba(252,69,69,1) 0%, r
     grid-column-start: 2;
       
   }
-  .nombreUSU{
 
-  }
+
+
   .ranking{
     grid-column-start: 1;
     grid-column-end: 2;
