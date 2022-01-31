@@ -119,9 +119,12 @@
                             info.innerHTML = "Son pareja";
                             sel1.removeEventListener('click', comparar);
                             sel2.removeEventListener('click', comparar);
+
                             
                             sel1.style.visibility = 'inherit';
                             sel1.style.visibility = 'inherit';
+                            sel1.classList.add("sombras");
+                            sel2.classList.add("sombras");
                             sel1 = '';
                             sel2 = '';
                             puntuacion++;

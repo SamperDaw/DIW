@@ -3,6 +3,17 @@
 
 
 
+
+
+body{
+    background-image: url("imagenes/fondo.png");
+    background-size: cover;
+}
+.sombras{
+    -webkit-box-shadow: -13px 5px 15px 4px rgba(0,0,0,0.7); 
+    box-shadow: -13px 5px 15px 4px rgba(0,0,0,0.7);
+}
+
 .contenedor {
     display: grid;
     grid-template-columns: 144px 144px 144px 144px;
@@ -103,4 +114,51 @@ td {
     width: 100%;
     margin-top: 50px;
     padding: 5px;
+    background: rgb(252,69,69);
+background: linear-gradient(90deg, rgba(252,69,69,1) 0%, rgba(252,69,69,1) 0%, rgba(255,0,0,1) 0%, rgba(232,69,69,1) 80%, rgba(131,58,180,0) 99%)
+}
+
+@media screen and (max-width: 1024px){
+    .contenedor {
+        display: grid;
+        grid-template-columns: 144px 144px 144px;
+        grid-template-rows: 200px 200px 200px;
+        grid-gap: 10px;
+        justify-content: center;
+       margin: auto;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+    .contenedor {
+        display: grid;
+        grid-template-columns: 144px 144px;
+        grid-template-rows: 200px 200px 200px;
+        grid-gap: 10px;
+        justify-content: center;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .contenedor {
+        display: grid;
+        grid-template-columns: 144px 144px;
+        grid-template-rows: 200px 200px 200px;
+        grid-gap: 10px;
+        justify-content: center;
+        margin: auto;
+    }
+  .descripcion{
+      display: none;
+  }
+  .puntuacion{
+      display: grid;
+  }
+  
+  .titulo{
+      
+      margin: auto;
+  }
 }
