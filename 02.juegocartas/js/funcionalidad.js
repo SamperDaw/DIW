@@ -1,6 +1,81 @@
         let btnEsp = document.getElementById("btnESP");
         let btnEng = document.getElementById("btnENG");
 
+        document.getElementById("btnESP").addEventListener("click", cargarIdiomaES);
+        document.getElementById("btnENG").addEventListener("click", cargarIdiomaEN);
+        
+        function cargarIdiomaES() {
+            var xhr = new XMLHttpRequest();
+            var xhrDes = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    cargarXML(this);
+                }
+            };
+            xhrDes.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200) {
+                   document.getElementById("desc").innerHTML = this.responseText;
+                }
+            };
+            xhr.open("GET", "idiomas/idiomas.xml", true);
+            xhr.send();
+            xhrDes.open("GET","idiomas/españoldesc.txt", true);
+            xhrDes.send();
+            localStorage.setItem('lenguaje', 'esp');
+        }
+
+
+
+
+        function cargarIdiomaEN() {
+            var xhr = new XMLHttpRequest();
+            var xhrDes = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    cargarXML(this);
+                }
+            };
+            xhrDes.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200) {
+                   document.getElementById("desc").innerHTML = this.responseText;
+                }
+            };
+            xhr.open("GET", "idiomas/idiomas.xml", true);
+            xhr.send();
+            xhrDes.open("GET","idiomas/inglesdesc.txt", true);
+            xhrDes.send();
+            localStorage.setItem('lenguaje', 'eng');
+        }
+
+        function cargarXML(xml) {
+            var docXML = xml.responseXML;
+            var idioma;
+
+            if(localStorage.getItem('lenguaje')=='eng'){
+                idioma = docXML.getElementsByTagName("EN");
+            }else{
+                idioma = docXML.getElementsByTagName("ES");
+            }
+            titulo = idioma[0].getElementsByTagName("TITLE")[0].textContent;
+            score = idioma[0].getElementsByTagName("SCORE")[0].textContent;
+            fallosml =idioma[0].getElementsByTagName("ERRORS")[0].textContent;
+            jugadorxml = idioma[0].getElementsByTagName("TOPPLAYER")[0].textContent;
+            erroresjugador = idioma[0].getElementsByTagName("TOPERROR")[0].textContent;
+            idiomas = idioma[0].getElementsByTagName("LANGUAJE")[0].textContent;
+            informacion = idioma[0].getElementsByTagName("INFO")[0].textContent;
+
+
+           document.getElementById("titulo").innerHTML= titulo;
+           document.getElementById("puntuacion").innerHTML = score;
+           document.getElementById("fallosml").innerHTML = fallosml;
+           document.getElementById("jugadorxml").innerHTML= jugadorxml;
+           document.getElementById("erroresjugador").innerHTML= erroresjugador;
+           document.getElementById("idiomas").innerHTML = idiomas;
+           document.getElementById("informacion").innerHTML= informacion;
+     }
+
+
 
 
         let nombreUsuario = document.getElementById('usuario');
@@ -178,50 +253,11 @@
 
         
 
-        let paginaESP = document.getElementsByClassName("esp");
-        let paginaENG = document.getElementsByClassName("eng");
-
-
-        for (i = 0; i < paginaENG.length; i++) {
-            paginaENG[i].classList.add('ocultar');
-        }
-
-        btnEsp.addEventListener('click', idiomaESP);
-        btnEng.addEventListener('click', idiomaENG);
+       
 
 
 
 
-
-        function idiomaESP() {
-            for (i = 0; i < paginaENG.length; i++) {
-                paginaENG[i].classList.add('ocultar');
-            }
-            for (i = 0; i < paginaESP.length; i++) {
-                paginaESP[i].classList.remove('ocultar');
-            }
-            localStorage.setItem("idioma", "español");
-        }
-
-
-        function idiomaENG() {
-            for (i = 0; i < paginaESP.length; i++) {
-                paginaENG[i].classList.remove('ocultar');
-            }
-            for (i = 0; i < paginaENG.length; i++) {
-                paginaESP[i].classList.add('ocultar');
-            }
-            localStorage.setItem("idioma", "ingles");
-        }
-
-
-        if (localStorage.getItem("idioma") == "ingles") {
-            idiomaENG();
-        }
-        if (localStorage.getItem("idioma") == "español") {
-            idiomaESP();
-        }
-
-
+        
 
 
