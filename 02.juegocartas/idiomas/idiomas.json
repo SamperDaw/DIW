@@ -8,8 +8,9 @@
             "TOPERROS":"Errores del maquina",
             "LANGUAJE":"Idioma",
             "INFO":"Informacion"
+            
+            
         },
-
         "EN":{
             "TITLE":"Card Game",
             "SCORE":"Score",
